@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "prod": "pm2 start 'next start -p 4040' --name medium",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
