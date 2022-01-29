@@ -42,10 +42,4 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-/sanitynextmedium/node_modules/
-/sanitynextmedium/yarn.lock
-/sanitynextmedium/package-lock.json
-
 .env
-
-sanitynextmedium
