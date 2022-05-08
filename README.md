@@ -1,6 +1,6 @@
 # Demo
 
-[http://blog.shant-sargsyan.me](http://blog.shant-sargsyan.me)
+[https://blog.shant-dev.com](https://blog.shant-dev.com)
 
 # Next.js + Tailwind CSS Example
 
