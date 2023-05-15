@@ -1,5 +1,6 @@
 APP_NAME=blog-next-medium-clone
 DOCKERFILE=./Dockerfile
+BUILD_DIR=./
 PORT=4040
 NETWORK=
 
@@ -7,7 +8,7 @@ NETWORK=
 
 # Build the Docker image
 build:
-	docker build -t $(APP_NAME) . -f $(DOCKERFILE)
+	docker build -t $(APP_NAME) ${BUILD_DIR} -f $(DOCKERFILE)
 
 # Start a Docker container
 run:
