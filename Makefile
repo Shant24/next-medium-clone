@@ -1,7 +1,9 @@
 APP_NAME=blog-next-medium-clone
 DOCKERFILE=./Dockerfile
+PORT=4040
+NETWORK=
 
-.PHONY: build run log stop remove image-remove clean
+.PHONY: build run run-n log stop rm-container rm-image clean
 
 # Build the Docker image
 build:
@@ -9,7 +11,10 @@ build:
 
 # Start a Docker container
 run:
-	docker run -d --rm --name $(APP_NAME) -p 4040:3000 $(APP_NAME)
+	docker run -d --rm --name $(APP_NAME) -p $(PORT):3000 $(APP_NAME)
+
+run-n:
+	docker run -d --rm --name $(APP_NAME) --network $(NETWORK) -p $(PORT):3000 $(APP_NAME)
 
 # Show a Docker logs
 log:
@@ -20,15 +25,12 @@ stop:
 	docker stop $(APP_NAME) || true
 
 # Remove the Docker container
-remove:
+rm-container:
 	docker rm $(APP_NAME) || true
 
 # Remove the Docker image
-image-remove:
+rm-image:
 	docker rmi $(APP_NAME) || true
 
 # Stop, remove container and image
-clean:
-	docker stop $(APP_NAME) || true
-	docker rm $(APP_NAME) || true
-	docker rmi $(APP_NAME) || true
+clean: stop rm-container rm-image

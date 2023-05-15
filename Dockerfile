@@ -16,8 +16,5 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Expose port 4040
-EXPOSE 4040
-
 # Start the application
 CMD ["npm", "start"]
